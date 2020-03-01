@@ -7,4 +7,5 @@ Live preview of the abridged homepage below.
 Github page:
 https://ifycode.github.io/Js-simplified-abridged-homepage/
 
-
+Twitter handle:
+https://mobile.twitter.com/ifycode_
