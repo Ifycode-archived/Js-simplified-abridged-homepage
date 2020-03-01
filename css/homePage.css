@@ -94,7 +94,11 @@ nav {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-   
+}
+
+a {
+    color: var(--hero-area-color);
+    text-decoration: none;
 }
 
 .menu-controls {
