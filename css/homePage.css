@@ -1,0 +1,710 @@
+:root {
+    --hero-area-color: rgba(255, 255, 255, 0.85);
+    --hero-area-color2: rgba(255, 255, 255, 0.6);
+    --hero-area-color3: rgba(255, 255, 255, 0.1);
+    --hero-area-color4: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    height: 100vh;
+    background: white;
+    font-family: Helvetica, Arial, sans-serif;
+    background:linear-gradient(35deg,#146 25%, #168 50%,#146, #168);
+    background: #146;
+}
+
+
+
+body {
+   
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: grid;
+    grid-template-rows: 360px 0fr;
+    transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+/* Navigation area */
+.hero-area {
+    position: relative;
+    color: var(--hero-area-color);
+    background:linear-gradient(145deg,#146 25%, #168 50%,#146, #168);
+    background-size: 200% 200%;
+    animation: hero-bg 20s 0.7s linear infinite;
+    -webkit-animation: hero-bg 20s 0.7s linear infinite;
+}
+
+@keyframes hero-bg {
+
+    100% {
+        background-position: 100% 50%;
+        background-size: 100% 100%;
+        background:linear-gradient(145deg,#146 #168);
+
+    }
+}
+
+nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.gitHub-repoButton {
+    width: 148px;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.gitHub-repo {
+    font-size: 21px;
+    width: 0%;
+    height: inherit;
+    display: flex;
+    background: #158;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+   
+}
+
+.menu-controls {
+    display: flex;
+    align-items: center;
+   
+}
+
+.cubeLogoCover {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    width: 30px;
+    height: 30px;
+}
+
+/* Animated carousel area */
+
+.animatedCarousel {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.build {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    animation: build-border 1s linear forwards;
+    -webkit-animation: build-border 1s 1s linear forwards;
+    width: 155px;
+    height: 155px;
+    perspective: 800px;
+    overflow: hidden;
+}
+
+@keyframes build-border {
+    0% {
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    40% {
+        border-right: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    70% {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        border-left: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 1px 0.2px rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+.build div {
+    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -moz-transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -ms-transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform: translateZ(-75px) rotateY(-35deg) rotateX(-20deg);
+    -webkit-transform: translateZ(-75px) rotateY(-35deg) rotateX(-20deg);
+    -moz-transform: translateZ(-75px) rotateY(-35deg) rotateX(-20deg);
+    -ms-transform: translateZ(-75px) rotateY(-35deg) rotateX(-20deg);
+    -o-transform: translateZ(-75px) rotateY(-35deg) rotateX(-20deg);
+}
+
+.waitingForBorder {
+    opacity: 0;
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+}
+
+.showCubeAfterBorder {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}
+
+.cube__face {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+   
+} 
+
+.front {
+    transform: rotateY(0deg) translateZ(30px);
+    -webkit-transform: rotateY(0deg) translateZ(30px);
+    -moz-transform: rotateY(0deg) translateZ(30px);
+    -ms-transform: rotateY(0deg) translateZ(30px);
+    -o-transform: rotateY(0deg) translateZ(30px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(30px);
+    -webkit-transform: rotateY(180deg) translateZ(30px);
+    -moz-transform: rotateY(180deg) translateZ(30px);
+    -ms-transform: rotateY(180deg) translateZ(30px);
+    -o-transform: rotateY(180deg) translateZ(30px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(30px);
+    -webkit-transform: rotateY(90deg) translateZ(30px);
+    -moz-transform: rotateY(90deg) translateZ(30px);
+    -ms-transform: rotateY(90deg) translateZ(30px);
+    -o-transform: rotateY(90deg) translateZ(30px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(30px);
+    -webkit-transform: rotateY(-90deg) translateZ(30px);
+    -moz-transform: rotateY(-90deg) translateZ(30px);
+    -ms-transform: rotateY(-90deg) translateZ(30px);
+    -o-transform: rotateY(-90deg) translateZ(30px);
+}
+
+.top {
+
+    transform: rotateX(90deg) translateZ(30px);
+    -webkit-transform: rotateX(90deg) translateZ(30px);
+    -moz-transform: rotateX(90deg) translateZ(30px);
+    -ms-transform: rotateX(90deg) translateZ(30px);
+    -o-transform: rotateX(90deg) translateZ(30px);
+}
+
+.bottom {
+    box-shadow: 3px 2px 5px 10px rgba(0, 0, 0, 0.07), -5px -4px 5px 10px rgba(0, 0, 0, 0.07);
+    transform: rotateX(-90deg) translateZ(30px);
+    -webkit-transform: rotateX(-90deg) translateZ(30px);
+    -moz-transform: rotateX(-90deg) translateZ(30px);
+    -ms-transform: rotateX(-90deg) translateZ(30px);
+    -o-transform: rotateX(-90deg) translateZ(30px);
+}
+
+
+.tiny {
+    width: 30px;
+    height: 30px;
+    float: right;
+    background: linear-gradient(#134, #158);
+}
+
+
+.innerfront .two, .innerfront .three, .innerfront .four  {
+   opacity: 0;
+}
+
+.innerside .one, .innerside .three, .innerside .four  {
+    opacity: 0;
+ }
+
+ .innertop .one, .innertop .two, .innertop .four  {
+    opacity: 0;
+ }
+
+
+.innerside {
+    transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+}
+
+.innertop {
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    -ms-transform: rotateX(90deg);
+    -o-transform: rotateX(90deg);
+}
+
+
+.front .one {
+    opacity: 0;
+}
+
+.right .two {
+    opacity: 0;
+}
+
+.top .three {
+    opacity: 0;
+}
+
+.right .two {
+    opacity: 0;
+}
+
+.shade {
+    width: inherit;
+    height: inherit;
+}
+
+.shade-right {
+    background: linear-gradient(to right, #134, #158);
+}
+
+.shade-left {
+    background: linear-gradient(to left, #134, #158);
+}
+
+.shade-top {
+    background: linear-gradient(to top, #134, #158);
+}
+
+.shade-slant {
+    background: linear-gradient(145deg, #158, #134);
+}
+
+.shade-slantTwo {
+    background: linear-gradient(55deg, #158, #134);
+}
+
+.shade-slantThree {
+    background: linear-gradient(-45deg, #158, #134);
+}
+
+.shade-nogradient {
+    background: #134;
+}
+
+
+
+
+/*------cube Logo -----------*/
+
+.cubeLogo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform: translateZ(-18px) rotateY(-35deg) rotateX(-20deg);
+    -webkit-transform: translateZ(-18px) rotateY(-35deg) rotateX(-20deg);
+    -moz-transform: translateZ(-18px) rotateY(-35deg) rotateX(-20deg);
+    -ms-transform: translateZ(-18px) rotateY(-35deg) rotateX(-20deg);
+    -o-transform: translateZ(-18px) rotateY(-35deg) rotateX(-20deg);
+}
+
+.cube__faceLogo {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    opacity: 0.8;
+   
+} 
+
+.frontLogo {
+    transform: rotateY(0deg) translateZ(18px);
+    -webkit-transform: rotateY(0deg) translateZ(18px);
+    -moz-transform: rotateY(0deg) translateZ(18px);
+    -ms-transform: rotateY(0deg) translateZ(18px);
+    -o-transform: rotateY(0deg) translateZ(18px);
+}
+
+.backLogo {
+    transform: rotateY(180deg) translateZ(18px);
+    -webkit-transform: rotateY(180deg) translateZ(18px);
+    -moz-transform: rotateY(180deg) translateZ(18px);
+    -ms-transform: rotateY(180deg) translateZ(18px);
+    -o-transform: rotateY(180deg) translateZ(18px);
+}
+
+.rightLogo {
+    transform: rotateY(90deg) translateZ(18px);
+    -webkit-transform: rotateY(90deg) translateZ(18px);
+    -moz-transform: rotateY(90deg) translateZ(18px);
+    -ms-transform: rotateY(90deg) translateZ(18px);
+    -o-transform: rotateY(90deg) translateZ(18px);
+}
+
+.leftLogo {
+    transform: rotateY(-90deg) translateZ(18px);
+    -webkit-transform: rotateY(-90deg) translateZ(18px);
+    -moz-transform: rotateY(-90deg) translateZ(18px);
+    -ms-transform: rotateY(-90deg) translateZ(18px);
+    -o-transform: rotateY(-90deg) translateZ(18px);
+}
+
+.topLogo {
+    transform: rotateX(90deg) translateZ(18px);
+    -webkit-transform: rotateX(90deg) translateZ(18px);
+    -moz-transform: rotateX(90deg) translateZ(18px);
+    -ms-transform: rotateX(90deg) translateZ(18px);
+    -o-transform: rotateX(90deg) translateZ(18px);
+}
+
+.bottomLogo {
+    box-shadow: 1px 0.5px 5px 10px rgba(0, 0, 0, 0.01), 
+                -1px -0.5px 5px 10px rgba(0, 0, 0, 0.05);
+    transform: rotateX(-90deg) translateZ(18px);
+    -webkit-transform: rotateX(-90deg) translateZ(18px);
+    -moz-transform: rotateX(-90deg) translateZ(18px);
+    -ms-transform: rotateX(-90deg) translateZ(18px);
+    -o-transform: rotateX(-90deg) translateZ(18px);
+}
+
+
+.tinyLogo {
+    width: 18px;
+    height: 18px;
+    float: right;
+    background: linear-gradient(#134, #158);
+}
+
+
+.frontLogo .one {
+    opacity: 0;
+}
+
+.rightLogo .two {
+    opacity: 0;
+}
+
+.topLogo .three {
+    opacity: 0;
+}
+
+.rightLogo .two {
+    opacity: 0;
+}
+
+
+
+/*-------contributor/Learn more Area--------------*/
+
+.contributorArea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    display: grid;
+    color: var(--hero-area-color2);
+    position: absolute;
+    top: 300px;
+}
+
+.courseName {
+    font-size: 19px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--hero-area-color3);
+    margin-left: auto;
+    margin-right: auto;
+    width: 235px;
+}
+
+.author {
+    margin-top: 5px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s linear;
+    -webkit-transition: opacity 1s 0.8s linear;
+    -moz-transition: opacity 1s 0.8s linear;
+    -ms-transition: opacity 1s 0.8s linear;
+    -o-transition: opacity 1s 0.8s linear;
+}
+
+.waitingForCube {
+    top: 310px;
+    opacity: 0;
+}
+
+.showContributorAreaAfterCube {
+    top: 200px;
+    opacity: 1;
+}
+
+
+
+
+.learnMoreArea {
+    color: var(--hero-area-color4);
+    margin-top: 120px;
+}
+
+
+.learnMoreInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.learn1, .learn2, .learn3 {
+    width: 50%;
+    margin-top: 30px;
+    border-bottom: 1px solid var(--hero-area-color3);
+}
+
+.learn1 {
+    margin-top: 0;
+}
+
+.codeBlock {
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.learn {
+    width: 87%;
+    font-size: 16px;
+    margin: 10px 0px 10px 25px;
+}
+
+.end {
+    margin-bottom: 15px;
+}
+
+
+/*-------footer Area--------------*/
+
+.footer {
+    height: 200px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footerInner {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+}
+
+.email {
+    display: inline-block;
+}
+
+.call {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
+.twitter-profile {
+    display: inline-block;
+}
+
+.st-custom-button[data-network] {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff; 
+    margin: 0;
+}
+
+
+.svgShare {
+    margin-right: 5px;
+}
+
+.svgShare1 {
+    width: 26px;
+    height: 26px;
+}
+
+.svgShare3 {
+    width: 35px;
+    height: 31px;
+}
+
+.svgShare2, .svgShare4 {
+    width: 29px;
+    height: 29px;
+}
+
+.contact {
+    margin-top: 30px;
+}
+.copyright {
+    margin-top: 55px;
+}
+
+.share {
+    margin-top: 15px;
+}
+
+
+.back-to-top {
+    position: fixed;
+    width: 100%;
+    height: 23px;
+    top: 500px;
+    opacity: 0.85;
+}
+
+.arrow {
+    width: 23px;
+    height: 23px;
+    margin-left: auto;
+    margin-right: 14%;
+    background: url("../img/arrow.svg") 0 0/ contain;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    z-index: 10;
+    opacity: 0;
+}
+
+@media screen and (max-height: 620px) {
+    .back-to-top {
+        top: 400px;
+    }
+}
+
+@media screen and (min-width: 790px) {
+    .footer {
+        height: 35px;
+        margin-top: 10px;
+    }
+
+    .footerInner {
+        flex-direction: row;
+        
+    }
+
+    .learnMoreArea {
+         margin-top: 130px;     
+     }
+    
+    .learnMoreInner {
+        flex-direction: row;
+        width: 85%;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .learn1, .learn2, .learn3 {
+        width: 30%;
+        margin-top: 0;
+    
+    }
+    
+    .learn {
+        height: 100px;
+    }
+
+    .contact, .copyright, .share {
+        margin-top: 0;
+    }
+
+    .copyright {
+        margin-right: auto;
+    }
+    
+    .contact {
+        margin-right: 25px;
+    }
+
+    .share {
+        width: 30%;
+    }
+
+    .arrow {
+        margin-right: 6%;
+    }
+    
+}
+
+@media screen and (min-width: 795px) {
+    .learn {
+        height: 80px;
+     
+    }
+}
+
+@media screen and (min-width: 1031px) {
+    .learn {
+        height: 60px;
+     
+    }
+}
+
+
